@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Daily Journal</title>
+  <meta charset="utf-8">
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  
+<!-- Roboto font -->
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <p class="navbar-brand">DAILY JOURNAL</p>
+      </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li id="home"><a href="/">HOME</a></li>
+          <li id="about"><a href="/about">ABOUT US</a></li>
+          <li id="contact"><a href="/contact">CONTACT US</a></li>
+        </ul>
+    </div>
+  </nav>
+  
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    /* Add a gray background color with some padding */
+    
+    
+    /* Header/Blog Title */
+    .header {
+      padding: 30px;
+      font-size: 40px;
+      text-align: center;
+      background: white;
+    }
+    
+    /* Create two unequal columns that floats next to each other */
+    /* Left column */
+    .leftcolumn {   
+      float: left;
+      width: 75%;
+    }
+    
+    /* Right column */
+    .rightcolumn {
+      float: left;
+      width: 25%;
+      padding-left: 20px;
+      position: relative;
+      
+    }
+    
+    /* Fake image */
+    
+    /* Add a card effect for articles */
+    .card {
+       background-color: white;
+       padding: 20px;
+       margin-top: 20px;
+       height: auto;
+    }
+    
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    
+    /* Footer */
+    
+    /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 800px) {
+      .leftcolumn, .rightcolumn {   
+        width: 100%;
+        padding: 0;
+      }
+    }
+
+
+    .btn__container {
+      position: relative;
+      bottom: 30px;
+    }
+
+    .btn-f {
+      position: relative;
+      top: 45%;
+    }
+    
+    .btn {
+      position: relative;
+      top: 45%;
+    }
+
+    </style>
+
+
+
+
+
+
+</head>
+  <body>
+    <div class="container">
+
+
+
+
+      <div class="row">
+        <div class="leftcolumn">
+          <div class="card">
+            <h1><%=title%></h1>
+            <h5>Title description, Dec 7, 2019</h5>
+            <p><%=content%></p>
+          </div>
+        </div>
+        <div class="rightcolumn">
+          <div class="card">
+            <h2>About Me</h2>
+            <p>About me text</p>
+          </div>
+          </div>
+
+          
+
+        </div>
+
+
+        <div class="btn__container">
+          <a href="/redirect?service=twitter&title=www.blog.com/post/<%=postIndex%>" target="_blank" class="btn">
+            <i class="fab fa-twitter "></i>
+            <span> Twitter</span>
+          </a>
+            <a href="/redirect?service=facebook&title=www.blog.com/post/<%=postIndex%>" target="_blank" class="btn-f">
+            <i class="fab fa-facebook "></i>
+            <span> facebook</span>
+          </a>
+        </div>
+      
+      </div>
+
+
+
+
+
+
+
+  
+
+<%- include("partials/footer"); -%>

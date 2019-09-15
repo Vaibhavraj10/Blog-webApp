@@ -1,0 +1,64 @@
+
+<%- include("partials/header"); -%>
+
+<div class="container">
+
+
+
+
+  <div class="row">
+    <div class="leftcolumn">
+      
+        <div class="random">
+
+          <p> <%= startingContent %> </p>
+      
+          
+        <%  posts.forEach(function(post){ %>
+          <div class="card">
+          <h1><%=post.title%></h1>
+          <p>
+          <%=post.content.substring(0, 100) + " ..."%>
+          <a href="/posts/<%=post._id%>">Read More</a>
+          </p>
+      
+           </div>
+          <% }) %>
+      
+          </div>
+      </div>
+    </div>
+
+      
+
+    </div>
+
+
+    <!-- 
+    <h1>Home</h1>
+    <div class="random">
+    <p> <%= startingContent %> </p>
+
+
+  <%  posts.forEach(function(post){ %>
+
+    <h1><%=post.title%></h1>
+    <p>
+    <%=post.content.substring(0, 100) + " ..."%>
+    <a href="/posts/<%=post._id%>">Read More</a>
+    </p>
+
+
+    <% }) %>
+
+    </div>
+
+    <!-- <button name="compose" href="/compose">+ Compose</button> -->
+    <div class="buttons">
+    <form action="/compose" method = "get">
+      <div class="button_cont" align="center"><a class="example_e" href="compose" rel="nofollow noopener">Create a blog! </a></div>
+    </form>
+    </div> 
+  
+
+<%- include("partials/footer"); -%>
